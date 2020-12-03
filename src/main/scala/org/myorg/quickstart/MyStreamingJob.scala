@@ -40,7 +40,9 @@ object MyStreamingJob {
 
     val text = env.socketTextStream("localhost", 9999, '\n')
 
-    val windowCounts = text.flatMap(w=>w.split("\\s"))
+    val windowCounts = text.flatMap(
+      w=>w.split("\\s"))
+//            w=>w.split("\\s", -1))
       .map(w=>WordWithCount(w, 1))
       .keyBy(_.word)
       .timeWindow(Time.seconds(5))

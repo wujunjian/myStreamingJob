@@ -1,3 +1,4 @@
 target/
 .idea/
 quickstart.iml
+dependency-reduced-pom.xml
